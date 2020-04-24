@@ -1,0 +1,16 @@
+struct ListNode *createlist()
+{
+	struct ListNode *head=(struct ListNode *)malloc(sizeof(struct ListNode));
+	head->next=NULL;
+	int data;
+	scanf("%d",&data);
+	while(data!=-1)
+	{
+		struct ListNode *p=(struct ListNode *)malloc(sizeof(struct ListNode));
+		p->data=data;
+		p->next=head->next;
+		head->next=p; 
+		scanf("%d",&data);
+	}
+	return head->next;
+}
